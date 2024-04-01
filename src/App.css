@@ -1,38 +1,271 @@
-.App {
-  text-align: center;
+* {
+  text-decoration: none !important;
+  list-style: none !important;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  transition: 0.2s ease !important;
+}
+a {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+*:focus,
+*:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main: #0a66c2;
+  --lessmain: #0a66c2b0;
+  --primary: #0f0f0f;
+  --color: #fdfdfd;
+  --new: #ffffff09;
+}
+[data-theme="dark"] {
+  --main: #0a66c2;
+  --lessmain: #0a66c2b0;
+  --primary: #0f0f0f;
+  --color: #fdfdfd;
+  --new: #ffffff09;
+}
+[data-theme="light"] {
+  --main: #0a66c2;
+  --lessmain: #0a66c2b0;
+  --primary: #fdfdfd;
+  --color: #0f0f0f;
+  --new: #0000000f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bg-main {
+  background-color: var(--main) !important;
+}
+.bg-lessmain {
+  background-color: var(--lessmain) !important;
+}
+.bg-primarys {
+  background-color: var(--primary) !important;
+}
+.bg-color {
+  background-color: var(--color) !important;
+}
+.text-main {
+  color: var(--main) !important;
+}
+.text-lessmain {
+  color: var(--lessmain) !important;
+}
+.text-primarys {
+  color: var(--primary) !important;
+}
+.text-color {
+  color: var(--color) !important;
+}
+.border-main {
+  border: 2px solid var(--main) !important;
+}
+.border-lessmain {
+  border: 2px solid var(--lessmain) !important;
+}
+.border-primarys {
+  border: 2px solid var(--primary) !important;
+}
+.border-color {
+  border: 2px solid var(--color) !important;
+}
+.text-gradient {
+  color: #0a66c2;
+  background-image: -webkit-linear-gradient(0deg, #8755f2, #0a66c2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gradient2 {
+  background: #0a66c2;
+  background-image: linear-gradient(180deg, #8755f2d2, #0a66c2);
+}
+.shadow {
+  height: min-content !important;
+}
+.heightset {
+  height: 100vh !important;
+}
+.actions .btn:hover {
+  background-color: var(--new) !important;
+}
+.bg-new {
+  background-color: var(--new);
+}
+.list-group {
+  background-color: transparent !important;
+}
+.fw-lightd {
+  font-family: calibri;
+}
+.text-truncater {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 11vw !important;
+}
+.chatselector {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.userlist:hover {
+  background-color: var(--new) !important;
+}
+.mynavbarimg {
+  width: 2.7rem !important;
+  height: 45px !important;
+}
+.mynavbarimg2 {
+  width: 6rem !important;
+}
+i {
+  cursor: pointer;
+}
+.heightset1 {
+  height: min-content !important;
+}
+.chatsize {
+  width: max-content !important;
+  max-width: 40% !important;
+  border-radius: 20px;
+  border-bottom-right-radius: 0px !important;
+}
+.chatsize2 {
+  width: max-content !important;
+  max-width: 40% !important;
+  border-radius: 20px;
+  border-bottom-left-radius: 0px !important;
+}
+.ds {
+  height: 85vh;
+}
+
+@media screen and (max-width: 1100px) {
+  .chatsize {
+    word-break: break-all !important;
+    width: max-content !important;
+    max-width: 60% !important;
+  }
+  .chatsize2 {
+    width: max-content !important;
+    word-break: break-all !important;
+    max-width: 60% !important;
+  }
+  .ds {
+    height: 75vh;
   }
 }
+.bottomfixed {
+  position: absolute;
+  bottom: 0;
+}
+.absolute {
+  position: absolute;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inline-block {
+  display: inline-block;
+}
+
+.loader {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0.25em 0;
 }
 
-.App-link {
-  color: #61dafb;
+.w-2 {
+  width: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dash {
+  animation: dashArray 2s ease-in-out infinite, dashOffset 2s linear infinite;
+}
+
+.spin {
+  animation: spinDashArray 2s ease-in-out infinite, spin 8s ease-in-out infinite,
+    dashOffset 2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes dashArray {
+  0% {
+    stroke-dasharray: 0 1 359 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    stroke-dasharray: 0 359 1 0;
+  }
+
+  100% {
+    stroke-dasharray: 359 1 0 0;
   }
 }
+
+@keyframes spinDashArray {
+  0% {
+    stroke-dasharray: 270 90;
+  }
+
+  50% {
+    stroke-dasharray: 0 360;
+  }
+
+  100% {
+    stroke-dasharray: 270 90;
+  }
+}
+
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 365;
+  }
+
+  100% {
+    stroke-dashoffset: 5;
+  }
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+
+  12.5%,
+  25% {
+    rotate: 270deg;
+  }
+
+  37.5%,
+  50% {
+    rotate: 540deg;
+  }
+
+  62.5%,
+  75% {
+    rotate: 810deg;
+  }
+
+  87.5%,
+  100% {
+    rotate: 1080deg;
+  }
+}
+/*
+1: logo change on loading     k
+2: font change                k
+3: update text
+4: remove about me section  
+5: close navbar on toch       k
+6: paste shop block on home
+7: make navbar block pink
+8: testimonials shadow
+pink evrything*/
